@@ -1,0 +1,15 @@
+<div class='show'>
+  <h2><%= @author.name %></h2>
+  <p>Nationality: <%= @author.nationality %><br>
+  Date of Birth: <%= @author.dob.strftime('%d/%m/%y')%></p>
+  <% if @author.books %>
+    <p>
+      <% @author.books.each do |book| %>
+        <li><%= link_to(book.title, book) %></li>
+      <% end %>
+    </p>
+  <% end %>
+  <%= link_to('Edit', edit_author_path(@author)) %>
+  <%= link_to('Delete', @author, :method => :delete) %><br>
+  <%= image_tag(@author.image, :class => 'medium') %>
+</div>

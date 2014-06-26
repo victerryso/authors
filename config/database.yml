@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: authors_development
+  host: localhost
+  username: palopiie
+  password:
+
+test:
+  <<: *default
+  database: authors_test
+
+production:
+  <<: *default
+  database: authors_production
+  username: palopiie
+  password:

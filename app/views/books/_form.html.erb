@@ -1,0 +1,31 @@
+<%= form_for @book do |f| %>
+
+<div class='box'>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :pages %>
+    <%= f.number_field :pages %>
+  </p>
+
+  <p>
+    <%= f.label :isbn, 'ISBN' %>
+    <%= f.text_field :isbn %>
+  </p>
+
+  <p>
+    <%= f.label :image, 'Image(URL)' %>
+    <%= f.text_field :image %>
+  </p>
+
+  <p>
+    <%= f.label :author_id %>
+    <%= f.select :author_id, Author.all.map { |author| [author.name, author.id] }, :include_blank => true %>
+  </p>
+
+  <%= f.submit %>
+</div>
+<% end %>

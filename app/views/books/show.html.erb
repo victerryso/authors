@@ -1,0 +1,12 @@
+<div class='show'>
+  <h2><%= @book.title %></h2>
+  <% if @book.author %>
+    <h3>Author: <%= @book.author.name %></h3>
+  <% end %>
+  <p>Pages: <%= @book.pages %><br>
+    ISBN: <%= @book.isbn %><br>
+    <%= link_to('Edit', edit_book_path(@book)) %>
+    <%= link_to('Delete', @book, :method => :delete) %><br>
+  </p>
+  <%= image_tag(@book.image, :class => 'medium') %>
+</div>
